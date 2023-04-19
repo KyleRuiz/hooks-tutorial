@@ -4,7 +4,12 @@ const Info = () => {
   const [name, setName] = useState("");
   const [nickname, setNickname] = useState("");
   useEffect(() => {
+    console.log("Effect");
     console.log(name);
+    return () => {
+      console.log("clean up");
+      console.log(name);
+    };
   }, [name]);
 
   const onChangeName = (e) => {
